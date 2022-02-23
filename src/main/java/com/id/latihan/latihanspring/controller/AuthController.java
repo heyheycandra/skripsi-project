@@ -91,24 +91,23 @@ public class AuthController {
         encoder.encode(signUpRequest.getPassword()));
 
     Set<String> strRoles = signUpRequest.getRole();
-    Role roles1 = new Role();
     Set<Role> roles = new HashSet<>();
 
     if (strRoles == null) {
-      Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+      Role userRole = roleRepository.findByName(ERole.ROLE_ADMIN)
           .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
       roles.add(userRole);
     } else {
       strRoles.forEach(role -> {
         switch (role) {
-        case "admin":
-          Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+        case "Superadmin":
+          Role adminRole = roleRepository.findByName(ERole.ROLE_SUPERADMIN)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
           roles.add(adminRole);
 
           break;
-        case "mod":
-          Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
+        case "teknisi":
+          Role modRole = roleRepository.findByName(ERole.ROLE_TEKNISI)
               .orElseThrow(() ->
                       new RuntimeException("Error: Role is not found."));
           System.out.println(modRole);
@@ -116,7 +115,7 @@ public class AuthController {
 
           break;
         default:
-          Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+          Role userRole = roleRepository.findByName(ERole.ROLE_ADMIN)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
           roles.add(userRole);
         }
