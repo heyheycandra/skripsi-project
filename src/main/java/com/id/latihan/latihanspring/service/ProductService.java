@@ -34,7 +34,7 @@ public class ProductService {
         product1.setCreate_by(product.getCreate_by());
         product1.setUpdate_on(new Date());
         product1.setUpdate_by(product.getUpdate_by());
-        return productRepository.save(product);
+        return productRepository.save(product1);
     }
 
     public String deleteDataProductById (Long product_id){
