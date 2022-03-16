@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -31,8 +32,8 @@ public class ProductController {
     }
 
     @GetMapping("/getAllProduct")
-    public ResponseEntity<MessageResponse> getAllDataProduct(){
-        return (ResponseEntity<MessageResponse>) productService.getAllDataProduct();
+    public List<Product> getProductAll(){
+        return productService.getAllDataProduct();
     }
 
     @GetMapping("/product/{product_id}")

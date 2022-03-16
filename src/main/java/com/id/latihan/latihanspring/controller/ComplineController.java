@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,8 +33,8 @@ public class ComplineController {
     }
 
     @GetMapping("/getAllCompline")
-    public ResponseEntity<MessageResponse> getAllcompline(){
-        return (ResponseEntity<MessageResponse>) complineService.getAllDataCompline();
+    public List<Compline> getAllcompline(){
+        return complineService.getAllDataCompline();
     }
 
     @GetMapping("/{id}")
