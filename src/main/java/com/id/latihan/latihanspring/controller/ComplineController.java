@@ -38,10 +38,14 @@ public class ComplineController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Compline> findByIdCompline(@RequestBody Long id){
+    public Optional<Compline> findByIdCompline(@PathVariable Long id){
         return complineService.findByIdCompline(id);
     }
 
-
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<MessageResponse> deleteDataProductById(@PathVariable Long id){
+        complineService.deleteDataComplineById(id);
+        return ResponseEntity.ok(new MessageResponse("success delete data compline id :" + id));
+    }
 
 }

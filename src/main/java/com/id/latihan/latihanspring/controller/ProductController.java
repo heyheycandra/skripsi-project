@@ -37,12 +37,12 @@ public class ProductController {
     }
 
     @GetMapping("/product/{product_id}")
-    public Optional<Product> findByIdProduct(@RequestBody Long product_id){
+    public Optional<Product> findByIdProduct(@PathVariable Long product_id){
         return productService.findByIdProduct(product_id);
     }
 
     @DeleteMapping("/delete/{product_id}")
-    public ResponseEntity<MessageResponse> deleteDataProductById(@RequestBody Long product_id){
+    public ResponseEntity<MessageResponse> deleteDataProductById(@PathVariable Long product_id){
         productService.deleteDataProductById(product_id);
         return ResponseEntity.ok(new MessageResponse("success delete data product id :" + product_id));
     }
