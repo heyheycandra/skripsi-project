@@ -1,10 +1,7 @@
 package com.id.latihan.latihanspring.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -37,6 +34,14 @@ public class Product {
 
     @Column(length = 100)
     private String nama_vendor;
+
+    @ManyToOne
+    @JoinColumn(name = "tgl_pemeliharaan")
+    private Jadwal tgl_pemeliharaan;
+
+    @ManyToOne
+    @JoinColumn(name = "tgl_kalibrasi")
+    private JadualKalibrasi tgl_kalibrasi;
 
     @Column
     private Date create_on;

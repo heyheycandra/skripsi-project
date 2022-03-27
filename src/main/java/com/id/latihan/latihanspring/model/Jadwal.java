@@ -9,7 +9,8 @@ import java.util.Date;
 public class Jadwal {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column
