@@ -18,33 +18,33 @@ public class JadwalController {
     @Autowired
     JadwalService jadwalService;
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @PostMapping("/addJadwal")
     public ResponseEntity<MessageResponse>addDataJadwal(@RequestBody Jadwal jadwal){
         jadwalService.saveDataJadwal(jadwal);
         return ResponseEntity.ok(new MessageResponse("success insert data jadwal"));
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @PostMapping("/updateDataJadwal")
     public ResponseEntity<MessageResponse> updateDataJadwal(@RequestBody Jadwal jadwal){
         jadwalService.updateDataJadwal(jadwal);
         return ResponseEntity.ok(new MessageResponse("success update data jadwal "));
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @GetMapping("/getAllJadwal")
     public List<Jadwal> getAllJadwal(){
         return jadwalService.getDataAllJadwal();
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @GetMapping("/jadwal/{id}")
     public Optional<Jadwal> findByIdJadwal(@PathVariable Long id){
         return jadwalService.findByIdJadwal(id);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<MessageResponse> deleteDataJadwalById(@PathVariable Long id){
         jadwalService.deletDataJadwalById(id);

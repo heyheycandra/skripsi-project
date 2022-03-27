@@ -20,33 +20,33 @@ public class ComplineController {
     @Autowired
     ComplineService complineService;
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @PostMapping("/addCompline")
     public ResponseEntity<MessageResponse> addDataCompline(@RequestBody Compline compline){
         complineService.saveDataCompline(compline);
         return ResponseEntity.ok(new MessageResponse("success insert data"));
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @PostMapping("/updateCompline")
     public ResponseEntity<MessageResponse> updateDataCompline(@RequestBody Compline compline){
         complineService.updateDataCompline(compline);
         return ResponseEntity.ok(new MessageResponse("success update data"));
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @GetMapping("/getAllCompline")
     public List<Compline> getAllcompline(){
         return complineService.getAllDataCompline();
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @GetMapping("/{id}")
     public Optional<Compline> findByIdCompline(@PathVariable Long id){
         return complineService.findByIdCompline(id);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<MessageResponse> deleteDataProductById(@PathVariable Long id){
         complineService.deleteDataComplineById(id);
