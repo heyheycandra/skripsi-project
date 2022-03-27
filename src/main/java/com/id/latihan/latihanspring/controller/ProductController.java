@@ -19,21 +19,21 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com")
     @PostMapping("/addProduct")
     public ResponseEntity<MessageResponse> addDataProduct(@RequestBody Product product){
         productService.saveDataProduct(product);
         return ResponseEntity.ok(new MessageResponse("success insert data"));
     }
 
-    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com")
     @PostMapping("/updateProduct")
     public ResponseEntity<MessageResponse> updateDataProduct(@RequestBody Product product){
         productService.updateDataProduct(product);
         return ResponseEntity.ok(new MessageResponse("success update data"));
     }
 
-    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com")
     @GetMapping("/getAllProduct")
     public List<Product> getProductAll(){
         return productService.getAllDataProduct();
@@ -45,7 +45,7 @@ public class ProductController {
         return productService.findByIdProduct(product_id);
     }
 
-    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com")
     @DeleteMapping("/delete/{product_id}")
     public ResponseEntity<MessageResponse> deleteDataProductById(@PathVariable Long product_id){
         productService.deleteDataProductById(product_id);
