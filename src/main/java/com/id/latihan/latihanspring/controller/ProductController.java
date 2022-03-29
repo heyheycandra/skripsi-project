@@ -39,7 +39,7 @@ public class ProductController {
         return productService.getAllDataProduct();
     }
 
-    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com/")
+    @CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com")
     @GetMapping("/product/{product_id}")
     public Optional<Product> findByIdProduct(@PathVariable Long product_id){
         return productService.findByIdProduct(product_id);
