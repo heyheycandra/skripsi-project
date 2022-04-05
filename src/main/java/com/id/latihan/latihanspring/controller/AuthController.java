@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "https://skripsi-projectv2.herokuapp.com")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
