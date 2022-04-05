@@ -30,7 +30,7 @@ public class Product {
     private String kondisi;
 
     @Column(length = 100)
-    private int harga_beli;
+    private String harga_beli;
 
     @Column(length = 100)
     private String nama_vendor;
@@ -112,12 +112,28 @@ public class Product {
         this.kondisi = kondisi;
     }
 
-    public int getHarga_beli() {
+    public String getHarga_beli() {
         return harga_beli;
     }
 
-    public void setHarga_beli(int harga_beli) {
+    public void setHarga_beli(String harga_beli) {
         this.harga_beli = harga_beli;
+    }
+
+    public Jadwal getTgl_pemeliharaan() {
+        return tgl_pemeliharaan;
+    }
+
+    public void setTgl_pemeliharaan(Jadwal tgl_pemeliharaan) {
+        this.tgl_pemeliharaan = tgl_pemeliharaan;
+    }
+
+    public JadualKalibrasi getTgl_kalibrasi() {
+        return tgl_kalibrasi;
+    }
+
+    public void setTgl_kalibrasi(JadualKalibrasi tgl_kalibrasi) {
+        this.tgl_kalibrasi = tgl_kalibrasi;
     }
 
     public String getNama_vendor() {
