@@ -9,6 +9,7 @@ import java.util.Date;
 public class Product {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long product_id;
 
     @Column(length = 100)
