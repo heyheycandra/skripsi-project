@@ -1,6 +1,5 @@
 package com.id.latihan.latihanspring.model;
 
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -9,7 +8,8 @@ import java.util.Date;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
     private Long product_id;
 
     @Column(length = 100)
@@ -55,7 +55,6 @@ public class Product {
 
     @Column
     private String update_by;
-
 
     public Long getProduct_id() {
         return product_id;
